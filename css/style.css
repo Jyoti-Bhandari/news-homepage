@@ -1,0 +1,330 @@
+/* Locally importing the font family details from the assets-->fonts */
+@font-face {
+    font-family: FontFamilySpecimen;
+    src: url(../assets/fonts/Inter-VariableFont_slnt\,wght.ttf);
+}
+
+/* global css starts */
+:root {
+    --soft-orange: hsl(35, 77%, 62%);
+    --soft-red: hsl(5, 85%, 63%);
+
+    --off-white: hsl(36, 100%, 99%);
+    --grayish-blue: hsl(233, 8%, 79%);
+    --dark-grayish-blue: hsl(236, 13%, 42%);
+    --very-dark-blue: hsl(240, 100%, 5%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: FontFamilySpecimen;
+    background-color: var(--off-white);
+}
+
+.container {
+    margin: 80px;
+}
+
+/* Local header section starts */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li {
+    padding: 16px;
+}
+
+ul li a {
+    color: var(--very-dark-blue);
+}
+
+ul li a:hover {
+    color: var(--soft-red);
+}
+
+.mobile-nav-toggle {
+    display: none;
+}
+
+.flex-row {
+    display: flex;
+}
+
+.gap-spacer {
+    gap: 30px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    /* added line */
+    border: 0;
+}
+
+/* Local section one starts-->top-container */
+
+.top-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.top-container .top-left {
+    width: 70%;
+    margin-right: 10px;
+}
+
+.top-left .web-img {
+    width: 100%;
+}
+
+.top-container .top-left .details {
+    display: flex;
+}
+
+.top-container .details h1 {
+    font-size: 60px;
+    padding: 30px 30px 30px 0px;
+    font-weight: 800;
+}
+
+.top-container .details p {
+    font-size: 16px;
+    color: var(--dark-grayish-blue);
+    padding: 40px 5px 40px 70px;
+}
+
+.details .readMore-btn button {
+    text-align: center;
+    margin-left: 70px;
+    padding: 16px 40px;
+    background-color: var(--soft-red);
+    color: var(--off-white);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 700;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-family: FontFamilySpecimen;
+}
+
+.details .readMore-btn button:hover {
+    background-color: var(--very-dark-blue);
+}
+
+.top-container .top-right {
+    width: 30%;
+    margin-left: 10px;
+    background-color: var(--very-dark-blue);
+    color: var(--off-white);
+    padding: 20px 40px 0px 40px;
+}
+
+.top-container .top-right h2 {
+    color: var(--soft-orange);
+    font-size: 38px;
+    margin-bottom: 40px;
+}
+
+.top-container .top-right h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    cursor: pointer;
+}
+
+.top-container .top-right h3:hover {
+    color: var(--soft-orange);
+}
+
+.top-container .top-right p {
+    font-size: 14px;
+    margin-bottom: 30px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--off-white);
+}
+
+.top-container .top-right p:last-child {
+    border-bottom: none;
+    padding-bottom: 0px;
+}
+
+/* Local section two starts-->bottom-container */
+.bottom-container {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.bottom-container .card {
+    display: flex;
+}
+
+.bottom-container .bottom-left {
+    margin-right: 20px;
+}
+
+.bottom-container .bottom-left img {
+    width: 80%;
+}
+
+.bottom-container .bottom-right {
+    margin-right: 30px;
+}
+
+.bottom-container .bottom-right h3 {
+    color: var(--grayish-blue);
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.bottom-container .bottom-right h4 {
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.bottom-container .bottom-right h4:hover {
+    color: var(--soft-red);
+}
+
+.bottom-container .bottom-right p {
+    color: var(--grayish-blue);
+    font-size: 16px;
+}
+
+/* footer */
+.attribution {
+    padding: 20px;
+    font-size: 11px;
+    text-align: center;
+    background-color: var(--very-dark-blue);
+    color: var(--off-white);
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+/* Media Query css starts */
+@media (max-width:1000px) {
+    .container {
+        margin: 30px 10px;
+    }
+
+    ul {
+        display: none;
+    }
+
+    .primary-navigation {
+        flex-direction: column;
+        background-color: var(--off-white);
+        z-index: 1000;
+        position: fixed;
+        inset: 0 0 0 40%;
+        padding: min(30vh, 9rem) 1.8rem;
+        transform: translateX(100%);
+        transition: transform 350ms ease-out;
+    }
+
+    .primary-navigation[data-visible="true"] {
+        transform: translateX(0%);
+    }
+
+    .mobile-nav-toggle {
+        background: url(../assets/images/icon-menu.svg);
+        background-repeat: no-repeat;
+        display: block;
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        z-index: 9999;
+        width: 2rem;
+        aspect-ratio: 1;
+        border: 0;
+    }
+
+    .mobile-nav-toggle[aria-expanded="true"] {
+        background: url(../assets/images/icon-menu-close.svg);
+        background-repeat: no-repeat;
+    }
+
+    .top-container {
+        flex-direction: column;
+    }
+
+    .top-container .top-left {
+        width: 100%;
+    }
+
+    .details .readMore-btn p {
+        padding: 0px;
+        margin-bottom: 30px;
+        line-height: 30px;
+        font-size: 20px;
+    }
+
+    .details .readMore-btn button {
+        margin-bottom: 40px;
+        margin-left: 0px;
+    }
+
+    .top-container .top-right {
+        width: 100%;
+        margin-left: 0px;
+        padding: 20px;
+    }
+
+    .top-left .web-img {
+        width: 100%;
+        content: url(../assets/images/image-web-3-mobile.jpg);
+    }
+
+    .top-container .details {
+        flex-direction: column;
+    }
+
+    .bottom-container {
+        flex-direction: column;
+    }
+
+    .bottom-container .card {
+        margin-bottom: 30px;
+    }
+
+    .bottom-container .bottom-left img {
+        width: 100%;
+    }
+}
